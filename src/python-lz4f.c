@@ -69,7 +69,8 @@ static PyObject *py_lz4f_createCompCtx(PyObject *self, PyObject *args) {
 
     return result;
 _output_error:
-    return Py_None;
+    //return Py_None;
+    Py_RETURN_NONE;
 }
 
 static PyObject *py_lz4f_freeCompCtx(PyObject *self, PyObject *args) {
@@ -84,7 +85,8 @@ static PyObject *py_lz4f_freeCompCtx(PyObject *self, PyObject *args) {
     cCtx = (LZ4F_compressionContext_t)PyCapsule_GetPointer(py_cCtx, NULL);
     LZ4F_freeCompressionContext(cCtx);
 
-    return Py_None;
+    //return Py_None;
+    Py_RETURN_NONE;
 }
 
 static PyObject *py_lz4f_compressFrame(PyObject *self, PyObject *args) {
@@ -142,7 +144,8 @@ static PyObject *py_lz4f_compressBegin(PyObject *self, PyObject *args) {
 
     return result;
 _output_error:
-    return Py_None;
+    //return Py_None;
+    Py_RETURN_NONE;
 }
 
 static PyObject *py_lz4f_compressUpdate(PyObject *self, PyObject *args) {
@@ -174,7 +177,8 @@ static PyObject *py_lz4f_compressUpdate(PyObject *self, PyObject *args) {
 
     return result;
 _output_error:
-    return Py_None;
+    //return Py_None;
+    Py_RETURN_NONE;
 }
 
 static PyObject *py_lz4f_compressEnd(PyObject *self, PyObject *args) {
@@ -202,7 +206,8 @@ static PyObject *py_lz4f_compressEnd(PyObject *self, PyObject *args) {
 
     return result;
 _output_error:
-    return Py_None;
+    //return Py_None;
+    Py_RETURN_NONE;
 }
 
 
@@ -221,7 +226,8 @@ static PyObject *py_lz4f_createDecompCtx(PyObject *self, PyObject *args) {
 
     return result;
 _output_error:
-    return Py_None;
+    //return Py_None;
+    Py_RETURN_NONE;
 }
 
 static PyObject *py_lz4f_freeDecompCtx(PyObject *self, PyObject *args) {
@@ -236,7 +242,8 @@ static PyObject *py_lz4f_freeDecompCtx(PyObject *self, PyObject *args) {
     dCtx = (LZ4F_decompressionContext_t)PyCapsule_GetPointer(py_dCtx, NULL);
     LZ4F_freeDecompressionContext(dCtx);
 
-    return Py_None;
+    //return Py_None;
+    Py_RETURN_NONE;
 }
 
 static PyObject *py_lz4f_getFrameInfo(PyObject *self, PyObject *args) {
@@ -270,7 +277,8 @@ static PyObject *py_lz4f_getFrameInfo(PyObject *self, PyObject *args) {
 
     return result;
 _output_error:
-    return Py_None;
+    //return Py_None;
+    Py_RETURN_NONE;
 }
 
 static PyObject *py_lz4f_disableChecksum(PyObject *self, PyObject *args) {
@@ -285,7 +293,8 @@ static PyObject *py_lz4f_disableChecksum(PyObject *self, PyObject *args) {
     dCtx = (LZ4F_decompressionContext_t)PyCapsule_GetPointer(py_dCtx, NULL);
     LZ4F_disableChecksum(dCtx);
 
-    return Py_None;
+    //return Py_None;
+    Py_RETURN_NONE;
 }
 
 static PyObject *py_lz4f_decompress(PyObject *self, PyObject *args, PyObject *keywds) {
@@ -329,7 +338,8 @@ static PyObject *py_lz4f_decompress(PyObject *self, PyObject *args, PyObject *ke
 
     return result;
 _output_error:
-    return Py_None;
+    //return Py_None;
+    Py_RETURN_NONE;
 }
 
 static PyMethodDef Lz4fMethods[] = {
