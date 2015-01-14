@@ -33,11 +33,11 @@
 #include <stdint.h>
 #include <string.h>
 #include <math.h>
-#include "lz4.h"
-#include "lz4hc.h"
-#include "lz4frame.h"
+#include <lz4.h>
+//#include "lz4hc.h"
+#include <lz4frame.h>
 #include "python-lz4f.h"
-#include "structmember.h"
+//#include "structmember.h"
 
 #if PY_MAJOR_VERSION >= 3
    #define PyInt_FromSize_t(x) PyLong_FromSize_t(x) 
@@ -281,7 +281,7 @@ _output_error:
     Py_RETURN_NONE;
 }
 
-static PyObject *py_lz4f_disableChecksum(PyObject *self, PyObject *args) {
+/*static PyObject *py_lz4f_disableChecksum(PyObject *self, PyObject *args) {
     PyObject *py_dCtx;
     LZ4F_compressionContext_t dCtx;
 
@@ -295,7 +295,7 @@ static PyObject *py_lz4f_disableChecksum(PyObject *self, PyObject *args) {
 
     //return Py_None;
     Py_RETURN_NONE;
-}
+}*/
 
 static PyObject *py_lz4f_decompress(PyObject *self, PyObject *args, PyObject *keywds) {
     const char* source;
@@ -353,7 +353,7 @@ static PyMethodDef Lz4fMethods[] = {
     {"freeDecompContext",   py_lz4f_freeDecompCtx,   METH_VARARGS, FDCTX_DOCSTRING},
     {"getFrameInfo",        py_lz4f_getFrameInfo,    METH_VARARGS, GETFI_DOCSTRING},
     {"decompressFrame",  (PyCFunction)py_lz4f_decompress, METH_VARARGS | METH_KEYWORDS, DCOMP_DOCSTRING},
-    {"disableChecksum",     py_lz4f_disableChecksum, METH_VARARGS, DCHKS_DOCSTRING},
+    // {"disableChecksum",     py_lz4f_disableChecksum, METH_VARARGS, DCHKS_DOCSTRING},
     {NULL, NULL, 0, NULL}
 };
 

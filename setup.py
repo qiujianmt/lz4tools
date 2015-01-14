@@ -19,11 +19,7 @@ setup(
     scripts=['lz4toolsCli'],
     ext_modules=[
         Extension('lz4f', [
-            'src/lz4.c',
-            'src/lz4hc.c',
-            'src/lz4frame.c',
             'src/python-lz4f.c',
-            'src/xxhash.c'
         ], extra_compile_args=[
             "-std=c99",
             "-O3",
@@ -32,6 +28,8 @@ setup(
             "-Wundef",
             "-DVERSION=\"%s\"" % VERSION_STR,
             "-DLZ4_VERSION=\"r123\"",
+        ], libraries=[
+            "lz4",
         ])],
     setup_requires=["nose>=1.0"],
     test_suite = "nose.collector",

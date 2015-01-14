@@ -41,7 +41,7 @@ static PyObject *py_lz4f_createDecompCtx(PyObject *self, PyObject *args);
 static PyObject *py_lz4f_freeDecompCtx(PyObject *self, PyObject *args);
 static PyObject *py_lz4f_getFrameInfo(PyObject *self, PyObject *args);
 static PyObject *py_lz4f_decompress(PyObject *self, PyObject *args, PyObject *keywds);
-static PyObject *py_lz4f_disableChecksum(PyObject *self, PyObject *args);
+//static PyObject *py_lz4f_disableChecksum(PyObject *self, PyObject *args);
 
 PyMODINIT_FUNC initlz4f(void);
 
